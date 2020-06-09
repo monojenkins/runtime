@@ -20,7 +20,7 @@
 
 #include "mono/metadata/assembly-internals.h"
 
-static int log_level = 1;
+static int log_level = 2;
 
 #define DEBUG_PRINTF(level, ...) do { if (G_UNLIKELY ((level) <= log_level)) { fprintf (stdout, __VA_ARGS__); } } while (0)
 
@@ -521,7 +521,7 @@ mono_wasm_breakpoint_hit (void)
 EMSCRIPTEN_KEEPALIVE int
 mono_wasm_current_bp_id (void)
 {
-	DEBUG_PRINTF (2, "COMPUTING breakpoint ID\n");
+	DEBUG_PRINTF (1, "COMPUTING breakpoint ID\n");
 	//FIXME handle compiled case
 
 	/* Interpreter */
